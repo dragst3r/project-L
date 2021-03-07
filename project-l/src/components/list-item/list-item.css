@@ -1,0 +1,15 @@
+.list-item-div{
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+    margin: 5px;
+}
+
+.list-item-name{
+    order: 1;
+    width:80%;
+}
+.list-item-quantity{
+    order: 2;
+    width:20%;
+}
