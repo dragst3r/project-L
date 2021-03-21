@@ -7,7 +7,7 @@ const ShoppingItems = (props) => {
   return (
     <div className="shopping-items">
       {props.shoppingItems.map((item) => (
-        <ListItem key={item.name} name={item.name} quantity={item.quantity} />
+        <ListItem key={item.name} {...item} quantity={item.quantityTotal} />
       ))}
     </div>
   );

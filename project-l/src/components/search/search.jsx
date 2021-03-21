@@ -1,11 +1,17 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
+import { add_item_to_list } from "../../store/actions/actions";
 import "./search.css";
 
-const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm,addListItem }) => {
+const SearchInput = ({
+  setSearchTerm,
+  addtoListItems,
+  searchTerm,
+  addListItem,
+}) => {
   const inputRef = useRef(null);
 
-  const setFocus = ()=> inputRef.current.focus();
+  const setFocus = () => inputRef.current.focus();
   return (
     <div className="search-bar">
       <input
@@ -20,9 +26,13 @@ const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm,addListItem }) 
         disabled={searchTerm === ""}
         type="button"
         onClick={() => {
-          addListItem({ name: searchTerm, quantity: 1 });
+          addListItem({
+            name: searchTerm,
+            unit:'x',
+            source: { itemSource: "list", quantity: 1 },
+          });
           setSearchTerm("");
-          setFocus()
+          setFocus();
         }}
       >
         Add
@@ -31,8 +41,8 @@ const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm,addListItem }) 
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  addListItem: (itemToAdd) => dispatch({type: 'ADD_ITEM_TO_LIST', payload: itemToAdd})
-})  
+const mapDispatchToProps = (dispatch) => ({
+  addListItem: (itemToAdd) => dispatch(add_item_to_list(itemToAdd)),
+});
 
 export default connect(null, mapDispatchToProps)(SearchInput);
