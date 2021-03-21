@@ -1,7 +1,9 @@
 .shopping-list{
-    width: 400px;
-    height: 450px;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
     border: 1px solid black;
     overflow: auto;
     position: fixed;
+    background-color: cornsilk;
 }

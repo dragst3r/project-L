@@ -4,4 +4,9 @@
     margin-left: auto;
     margin-right: auto;
     height: 200px;
+    display: flex;
+}
+img{
+    width:170px;
+    height: 150px;
 }
