@@ -1,10 +1,11 @@
 import React from "react";
 import "./recipe-item.css";
+import { connect } from "react-redux";
 
 const RecipeItem = (props) => {
   const addIngridiens = (ingridiens)=>{
     ingridiens.forEach(i => {
-      props.addToList(i)
+      props.addListItem(i)
     });
   }
   return (
@@ -25,5 +26,8 @@ const RecipeItem = (props) => {
     </div>
   );
 };
+const mapDispatchToProps = dispatch => ({
+  addListItem: (itemToAdd) => dispatch({type: 'ADD_ITEM_TO_LIST', payload: itemToAdd})
+});
 
-export default RecipeItem;
+export default connect(null,mapDispatchToProps)(RecipeItem);

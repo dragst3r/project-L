@@ -1,6 +1,6 @@
 import React from "react";
 import ListItem from "../list-item/list-item";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import "./shopping-items.css";
 
 const ShoppingItems = (props) => {
@@ -13,10 +13,8 @@ const ShoppingItems = (props) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    shoppingItems: state.shoppingItems
-  }
-}
+const mapStateToProps = (state) => ({
+  shoppingItems: state.shoppingItems,
+});
 
 export default connect(mapStateToProps)(React.memo(ShoppingItems));

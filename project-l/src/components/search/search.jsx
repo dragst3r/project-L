@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
+import { connect } from "react-redux";
 import "./search.css";
 
-const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm }) => {
+const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm,addListItem }) => {
   const inputRef = useRef(null);
 
   const setFocus = ()=> inputRef.current.focus();
@@ -19,7 +20,7 @@ const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm }) => {
         disabled={searchTerm === ""}
         type="button"
         onClick={() => {
-          addtoListItems({ name: searchTerm, quantity: 1 });
+          addListItem({ name: searchTerm, quantity: 1 });
           setSearchTerm("");
           setFocus()
         }}
@@ -29,4 +30,9 @@ const SearchInput = ({ setSearchTerm, addtoListItems, searchTerm }) => {
     </div>
   );
 };
-export default SearchInput;
+
+const mapDispatchToProps = dispatch => ({
+  addListItem: (itemToAdd) => dispatch({type: 'ADD_ITEM_TO_LIST', payload: itemToAdd})
+})  
+
+export default connect(null, mapDispatchToProps)(SearchInput);
