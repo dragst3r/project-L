@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 import "./shopping-items.css";
 
 const ShoppingItems = (props) => {
+  let listToDisplay = props.isFilterOn? [...props.shoppingItemsFiltered]:[...props.shoppingItems]
   return (
     <div className="shopping-items">
-      {props.shoppingItems.map((item) => (
+      {listToDisplay.map((item) => (
         <ListItem key={item.name} {...item} quantity={item.quantityTotal} />
       ))}
     </div>
@@ -15,6 +16,8 @@ const ShoppingItems = (props) => {
 
 const mapStateToProps = (state) => ({
   shoppingItems: state.shoppingItems,
+  shoppingItemsFiltered: state.shoppingItemsFiltered,
+  isFilterOn: state.isFilterOn
 });
 
 export default connect(mapStateToProps)(React.memo(ShoppingItems));

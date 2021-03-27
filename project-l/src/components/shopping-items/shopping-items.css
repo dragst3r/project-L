@@ -1,0 +1,6 @@
+.shopping-items{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 80%;
+}

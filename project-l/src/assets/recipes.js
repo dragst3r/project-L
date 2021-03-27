@@ -1,6 +1,6 @@
 export const recipes = [
     {
-        dishName: "Szakszuka z bazylią",
+        name: "Szakszuka z bazylią",
         cookingTime: 20,
         difficulty: "Łatwe",
         portions: 2,
@@ -23,7 +23,7 @@ export const recipes = [
           },
         ],
       },{
-        dishName: "Szakszuka z bazylią",
+        name: "Szakszuka z bazylią",
         cookingTime: 20,
         difficulty: "Łatwe",
         portions: 2,
@@ -46,7 +46,7 @@ export const recipes = [
           },
         ],
       },{
-        dishName: "Szakszuka z bazylią",
+        name: "Szakszuka z bazylią",
         cookingTime: 20,
         difficulty: "Łatwe",
         portions: 2,
@@ -70,7 +70,7 @@ export const recipes = [
         ],
       },
   {
-    dishName: "Pizza z mozzarellą",
+    name: "Pizza z mozzarellą",
     cookingTime: 40,
     difficulty: "Łatwe",
     portions: 2,

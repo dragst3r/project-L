@@ -5,8 +5,25 @@
     margin-right: auto;
     height: 200px;
     display: flex;
+    flex-direction: column;
 }
 img{
     width:170px;
     height: 150px;
+}
+.recipe-main{
+    display: flex;
+    flex-direction: row;
+}
+.recipe-top-pane{
+    width: 100%;
+    height: 50px;
+}
+.recipe-middle-pane{
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+}
+.recipe-right-pane{
+    align-self: flex-end;
 }

@@ -1,4 +1,6 @@
 .shopping-list{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 400px;
     height: 100%;

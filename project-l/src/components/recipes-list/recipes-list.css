@@ -4,8 +4,7 @@
   padding-left:100px;
   width: 100%;
   height: auto;
-  display: grid;
-  grid-auto-flow: row;
-  grid-template-rows: 200px;
-  grid-row-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
 }
