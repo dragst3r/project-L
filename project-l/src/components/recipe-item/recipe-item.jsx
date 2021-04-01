@@ -25,7 +25,7 @@ const RecipeItem = (props) => {
           <div>
             <ul>
               {props.ingridiens.map((i) => (
-                <li key={i.name}>{i.name + " " + i.quantity + " " + i.unit}</li>
+                <li key={i.name}>{`${i.name } ${i.quantity || ''}${i.unit  ==='x'?'':' '}${i.unit || ''}`}</li>
               ))}
             </ul>
           </div>

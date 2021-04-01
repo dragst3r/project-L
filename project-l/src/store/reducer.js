@@ -2,14 +2,7 @@ import * as actionTypes from "../store/actions/actions";
 import * as utility from "./utility";
 
 const initialState = {
-  shoppingItems: [
-    {
-      name: "test",
-      unit: "x",
-      quantityTotal: 2,
-      source: [{ itemSource: "list", quantity: 2 }],
-    },
-  ],
+  shoppingItems: [],
   shoppingItemsFiltered: [],
   isFilterOn: false,
   selectedRecipes: [],
