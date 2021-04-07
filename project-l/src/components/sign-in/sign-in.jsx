@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import firebase from "firebase";
 import FormInput from "../form-input/form-input";
 
 import "./sign-in.css";
@@ -6,6 +7,22 @@ import "./sign-in.css";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState();
+
+  const createUser = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((loggedUser) => {
+        setUser(loggedUser.user);
+        setEmail("");
+        setPassword("");
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div className="sign-in">
@@ -23,7 +40,8 @@ const SignIn = () => {
         handleChange={(e) => setPassword(e.target.value)}
         required
       />
-      <button>Submit</button>
+      <button onClick={createUser}>Submit</button>
+      {user ? <div>{user.email}</div> : null}
     </div>
   );
 };
