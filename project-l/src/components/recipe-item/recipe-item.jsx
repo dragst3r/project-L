@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import {
   add_item_to_list,
   add_recipe_to_list,
-} from "../../store/actions/actions";
+} from "../../redux/shopping-list/shopping-list.actions";
 
 const RecipeItem = (props) => {
   const addIngridiens = (ingridiens) => {

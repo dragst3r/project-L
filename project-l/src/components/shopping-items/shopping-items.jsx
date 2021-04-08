@@ -14,10 +14,10 @@ const ShoppingItems = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  shoppingItems: state.shoppingItems,
-  shoppingItemsFiltered: state.shoppingItemsFiltered,
-  isFilterOn: state.isFilterOn
+const mapStateToProps = ({shoppingList}) => ({
+  shoppingItems: shoppingList.shoppingItems,
+  shoppingItemsFiltered: shoppingList.shoppingItemsFiltered,
+  isFilterOn: shoppingList.isFilterOn
 });
 
 export default connect(mapStateToProps)(React.memo(ShoppingItems));

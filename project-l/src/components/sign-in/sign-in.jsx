@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import firebase from "firebase";
 import FormInput from "../form-input/form-input";
+import { connect } from "react-redux";
+import { log_in_user, log_out_user } from "../../redux/user/user.actions";
 
 import "./sign-in.css";
 
-const SignIn = () => {
+const SignIn = ({logInUser}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState();
 
   const createUser = () => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((loggedUser) => {
-        setUser(loggedUser.user);
+        logInUser(loggedUser.user);
         setEmail("");
         setPassword("");
-        console.log(user);
       })
       .catch((error) => {
         console.error(error);
@@ -41,9 +41,12 @@ const SignIn = () => {
         required
       />
       <button onClick={createUser}>Submit</button>
-      {user ? <div>{user.email}</div> : null}
     </div>
   );
 };
 
-export default SignIn;
+const mapDispatchToProps = (dispatch) => ({
+  logInUser: (user) => dispatch(log_in_user(user)),
+});
+
+export default connect(null, mapDispatchToProps)(SignIn);

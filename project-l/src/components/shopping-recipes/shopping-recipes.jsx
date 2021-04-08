@@ -13,7 +13,7 @@ const ShoppingRecipesList = ({ items }) => {
   );
 };
 
-const mapStateToProps =(state)=>({
-  items: state.selectedRecipes
+const mapStateToProps =({shoppingList})=>({
+  items: shoppingList.selectedRecipes
 })
 export default connect(mapStateToProps)(ShoppingRecipesList);

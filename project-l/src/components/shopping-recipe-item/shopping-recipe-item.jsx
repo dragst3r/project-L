@@ -1,7 +1,7 @@
 import React from "react";
 import "./shopping-recipe-item.css";
 import { connect } from "react-redux";
-import { apply_shopping_list_filter } from "../../store/actions/actions";
+import { apply_shopping_list_filter } from "../../redux/shopping-list/shopping-list.actions";
 
 const RecipeItemShop = (props) => (
   <div

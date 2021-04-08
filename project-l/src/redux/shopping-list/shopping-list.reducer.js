@@ -1,5 +1,5 @@
-import * as actionTypes from "../store/actions/actions";
-import * as utility from "./utility";
+import * as actionTypes from "./shopping-list.actions";
+import * as utility from "./shopping-list.utility";
 
 const initialState = {
   shoppingItems: [],
@@ -8,7 +8,7 @@ const initialState = {
   selectedRecipes: [],
 };
 
-const reducer = (state = initialState, action) => {
+const shoppingList = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_ITEM_TO_LIST:
       return utility.updateListItems(state, action.payload);
@@ -21,4 +21,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default shoppingList;
