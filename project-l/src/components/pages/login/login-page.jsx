@@ -5,12 +5,14 @@ import {signInWithGoogle} from "../../../firebase/firebase";
 import SignIn from "../../sign-in/sign-in";
 import "./login-page.css";
 
-const LoginPage = () => (
+const LoginPage = () => {
+  
+  return (
   <div className="login-page">
     LOGIN
     <SignIn />
-    <button>Google</button>
+    <button onClick={signInWithGoogle}>Google</button>
   </div>
-);
+)};
 
 export default LoginPage;
