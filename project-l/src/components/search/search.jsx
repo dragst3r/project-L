@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
+import AddIcon from '@material-ui/icons/Add';
 import { add_item_to_list } from "../../redux/shopping-list/shopping-list.actions";
 import "./search.css";
 
@@ -35,7 +36,7 @@ const SearchInput = ({
           setFocus();
         }}
       >
-        Add
+        <AddIcon />
       </button>
     </div>
   );

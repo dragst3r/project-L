@@ -6,6 +6,8 @@
     height: 200px;
     display: flex;
     flex-direction: column;
+    border: 1px rgb(114, 114, 114) solid;
+    border-radius: 10px;
 }
 img{
     width:100px;

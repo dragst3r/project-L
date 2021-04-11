@@ -9,7 +9,6 @@ const LoginPage = () => {
   
   return (
   <div className="login-page">
-    LOGIN
     <SignIn />
     <button onClick={signInWithGoogle}>Google</button>
   </div>

@@ -1,15 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import HeaderLink from "../header-link/header-link";
+import ListIcon from "@material-ui/icons/List";
+import MenuBookIcon from "@material-ui/icons/MenuBook";
+import PermIdentityIcon from "@material-ui/icons/PermIdentity";
+import User from "../user/user";
+import { connect } from "react-redux";
 import "./header.css";
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   return (
     <div className="header">
-      <Link to="/shop-list">List view</Link>
-      <Link to="/">Recipes view</Link>
-      <Link to="/login">Login</Link>
+      <HeaderLink
+        icon={<ListIcon />}
+        to="/shop-list"
+        name="List view"
+      ></HeaderLink>
+      <HeaderLink
+        icon={<MenuBookIcon />}
+        to="/"
+        name="Recipes view"
+      ></HeaderLink>
+      {isLoggedIn ? (
+        <User />
+      ) : (
+        <HeaderLink
+          icon={<PermIdentityIcon />}
+          to="/login"
+          name="Login"
+        ></HeaderLink>
+      )}
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.user.isLoggedIn,
+});
+
+export default connect(mapStateToProps)(Header);

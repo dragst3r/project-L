@@ -1,19 +1,31 @@
 .search-input {
     display: flex;
-    border: 1px solid #ccc;
+    border: none;
     text-align: left;
     height: 30px;
-    padding: 5px;
-    width: auto;
+    padding: 5px 5px 5px 15px;
+    width: 100%;
+    font-size: large;
+    background-color: transparent;
 }
 .search-bar{
-    width: auto;
+    width: 100%;
     height: auto;
     display: flex;
     margin: 5px;
+    justify-content: left;
 }
 .search-bar button{
-    margin: 0 5px 0 5px;
-    height: auto;
-    width: 50px;
+    margin-right: 5px;
+        gap:5px;
+        box-shadow:1px 2px 10px -2px  rgb(214, 214, 214);
+        border-radius: 10px;
+        color: rgb(2, 66, 0);
+        background-color: #FFF;
+        text-decoration: none;
+        transition: 0.3s;    margin-top: 0;
+}
+.search-bar button:hover{
+    color:#FFF;
+    background-color: rgb(2, 66, 0);
 }

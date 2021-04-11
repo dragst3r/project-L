@@ -1,7 +1,7 @@
 .recipes-list {
-  background-color: rgb(189, 231, 199);
   padding-top: 50px;
   width: 100%;
+  max-width: 850px;
   height: auto;
   display: flex;
   flex-direction: column;
