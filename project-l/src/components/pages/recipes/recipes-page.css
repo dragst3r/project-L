@@ -1,5 +1,16 @@
+
 .recipes-page{
+    display: flex;
+    flex-direction: row;
+}
+
+.left-pane{
+    width: 450px;
+}
+.right-pane{
+    overflow: auto;
     display:flex;
     flex-direction: row;
     width: 100%;
+    max-height: 93vh;
 }

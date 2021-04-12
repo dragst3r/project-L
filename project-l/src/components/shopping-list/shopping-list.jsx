@@ -5,14 +5,16 @@ import SearchInput from "../search/search.jsx";
 import ShoppingRecipesList from "../shopping-recipes/shopping-recipes";
 import { connect } from "react-redux";
 
-const ShoppingList = ({selectedRecipes}) => {
+const ShoppingList = ({ selectedRecipes }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div className="shopping-list">
-      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <ShoppingItems />
-      <ShoppingRecipesList items={selectedRecipes}/>
+      <div className="shopping-list-only">
+        <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        <ShoppingItems />
+      </div>
+      <ShoppingRecipesList items={selectedRecipes} />
     </div>
   );
 };

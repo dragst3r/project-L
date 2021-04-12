@@ -2,5 +2,6 @@
     display: flex;
     flex-direction: column;
     overflow: auto;
-    height: 80%;
+    height: 70%;
+    padding: 5px;
 }

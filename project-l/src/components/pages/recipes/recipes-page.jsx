@@ -5,10 +5,12 @@ import "./recipes-page.css";
 
 const RecipesPage = () => (
   <div className="recipes-page">
-    <div style={{ width: "500px" }}>
+    <div className="left-pane">
       <ShoppingList />
     </div>
-    <RecipesList />
+    <div className="right-pane">
+      <RecipesList />
+    </div>
   </div>
 );
 
