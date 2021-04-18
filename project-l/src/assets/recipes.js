@@ -80,12 +80,12 @@ export const recipes = [
       {
         name: "drożdże",
         quantity: 20,
-        unit: "gramów",
+        unit: "g",
       },
       {
         name: "ser żółty",
         quantity: 200,
-        unit: "gramów",
+        unit: "g",
       },
       {
         name: "oregano",

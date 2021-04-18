@@ -22,10 +22,10 @@ const RecipeItem = (props) => {
       <div className="recipe-middle-pane">
         <div className="recipe-main">
           <img alt="" src={props.image} />
-          <div>
-            <ul>
+          <div className="recipe-ingridiens-container">
+            <ul className="recipe-ingridiens">
               {props.ingridiens.map((i) => (
-                <li key={i.name}>{`${i.name } ${i.quantity || ''}${i.unit  ==='x'?'':' '}${i.unit || ''}`}</li>
+                <li className="ingridient" key={i.name}>{`${i.name } ${i.quantity || ''}${i.unit  ==='x'?'':' '}${i.unit || ''}`}</li>
               ))}
             </ul>
           </div>
@@ -41,6 +41,7 @@ const RecipeItem = (props) => {
           onClick={() => {
             addIngridiens(props.ingridiens);
             props.addRecipeItem({
+              image: props.image,
               name: props.name,
               _id: props._id,
               quantity: 1,

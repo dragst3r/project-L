@@ -4,6 +4,6 @@
     width: 100%;
     height: auto;
     gap:10px;
-    justify-content: center;
+    justify-content:flex-end;
     align-items: center;
 }

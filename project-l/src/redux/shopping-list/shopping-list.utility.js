@@ -51,8 +51,8 @@ export const updateRecipesList = (currentState, item) => {
 };
 
 export const filterShoppingItems = (currentState, item) => {
-  const filterShoppingItems = currentState.shoppingItems.filter((i) =>
-    i.source.every((j) => j.itemSource === item)
+  const filterShoppingItems = currentState.shoppingItems.filter(
+    (i) => i.source.every((j) => j.itemSource === item)
     // add updating quantityTotal if filtered
   );
   console.table(filterShoppingItems);
@@ -60,5 +60,14 @@ export const filterShoppingItems = (currentState, item) => {
     ...currentState,
     shoppingItemsFiltered: filterShoppingItems,
     isFilterOn: !currentState.isFilterOn,
+  };
+};
+
+export const setShoppingList = (currentState, item) => {
+  return {
+    ...currentState,
+    shoppingListVisible: true,
+    shoppingItems: item.shoppingItems,
+    selectedRecipes: item.selectedRecipes
   };
 };

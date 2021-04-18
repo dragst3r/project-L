@@ -7,7 +7,7 @@ const ShoppingRecipesList = ({ items }) => {
   return (
     <div className='shopping-recipe-list'>
       {items.map((r) => (
-        <RecipeItemShop name={r.name} key={r._id} id={r._id}/>
+        <RecipeItemShop image={r.image} name={r.name} key={r._id} id={r._id}/>
       ))}
     </div>
   );

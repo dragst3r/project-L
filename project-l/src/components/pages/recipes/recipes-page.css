@@ -4,10 +4,12 @@
     flex-direction: row;
 }
 
-.left-pane{
+.right-pane{
+    order:2;
     width: 450px;
 }
-.right-pane{
+.left-pane{
+    order: 1;
     overflow: auto;
     display:flex;
     flex-direction: row;
