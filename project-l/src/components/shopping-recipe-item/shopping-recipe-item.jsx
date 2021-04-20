@@ -4,9 +4,14 @@ import { connect } from "react-redux";
 import { apply_shopping_list_filter } from "../../redux/shopping-list/shopping-list.actions";
 
 const RecipeItemShop = (props) => (
-  <div style={{'backgroundImage': `url(${props.image})`}}
+  <div
+    style={{ backgroundImage: `url(${props.image})` }}
     onClick={() => {
-      props.filterShoppingItems(props.id);
+      props.filterShoppingItems({
+        id: props.id,
+        name: props.name,
+        image: props.image,
+      });
     }}
     className="shopping-recipe"
     key={props.key}
@@ -16,7 +21,8 @@ const RecipeItemShop = (props) => (
 );
 
 const mapDispatchToProps = (dispatch) => ({
-  filterShoppingItems: (filterRecipe) =>dispatch(apply_shopping_list_filter(filterRecipe)),
+  filterShoppingItems: (filterRecipe) =>
+    dispatch(apply_shopping_list_filter(filterRecipe)),
 });
 
 export default connect(null, mapDispatchToProps)(RecipeItemShop);

@@ -6,6 +6,7 @@ const initialState = {
   shoppingListVisible: false,
   shoppingItemsFiltered: [],
   isFilterOn: false,
+  filteredRecipe: null,
   selectedRecipes: [],
 };
 

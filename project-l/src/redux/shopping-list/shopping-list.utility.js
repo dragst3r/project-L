@@ -52,22 +52,31 @@ export const updateRecipesList = (currentState, item) => {
 
 export const filterShoppingItems = (currentState, item) => {
   const filterShoppingItems = currentState.shoppingItems.filter(
-    (i) => i.source.every((j) => j.itemSource === item)
+    (i) => i.source.every((j) => j.itemSource === item.id)
     // add updating quantityTotal if filtered
   );
-  console.table(filterShoppingItems);
+  let filteredRecipe = null;
+  if (!currentState.isFilterOn) {
+    filteredRecipe = item;
+  }
   return {
     ...currentState,
     shoppingItemsFiltered: filterShoppingItems,
+    filteredRecipe: filteredRecipe,
     isFilterOn: !currentState.isFilterOn,
   };
 };
 
 export const setShoppingList = (currentState, item) => {
+  let newState = { shoppingListVisible: true };
+  if (typeof item === undefined) {
+    newState = {
+      shoppingItems: item.shoppingItems,
+      selectedRecipes: item.selectedRecipes,
+    };
+  }
   return {
     ...currentState,
-    shoppingListVisible: true,
-    shoppingItems: item.shoppingItems,
-    selectedRecipes: item.selectedRecipes
+    ...newState,
   };
 };

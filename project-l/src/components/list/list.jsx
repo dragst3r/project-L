@@ -5,7 +5,7 @@ import "./list.css";
 
 const List = (props) => {
   const newList = (
-    <div className="new=list list">
+    <div onClick={()=>props.setList()} className="new=list list">
       <AddIcon />
     </div>
   );
