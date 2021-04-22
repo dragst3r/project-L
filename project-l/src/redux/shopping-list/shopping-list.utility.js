@@ -80,3 +80,11 @@ export const setShoppingList = (currentState, item) => {
     ...newState,
   };
 };
+
+export const setItemOnOff = (currentState,item) => {
+  let newShoppingItems = currentState.shoppingItems.map(m=>m.name===item?{...m,bought:!m.bought}:m).sort(function(x, y) { return x.bought - y.bought })
+  return {
+    ...currentState,
+    shoppingItems: [...newShoppingItems]
+  }
+}

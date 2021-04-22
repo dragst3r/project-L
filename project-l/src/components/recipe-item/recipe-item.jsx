@@ -12,6 +12,7 @@ const RecipeItem = (props) => {
       props.addListItem({
         name: i.name,
         unit: i.unit,
+        bought: false,
         source: { itemSource: props._id, quantity: i.quantity },
       });
     });

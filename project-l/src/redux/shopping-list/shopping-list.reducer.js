@@ -19,7 +19,9 @@ const shoppingList = (state = initialState, action) => {
     case actionTypes.APPLY_SHOPPING_LIST_FILTER:
       return utility.filterShoppingItems(state, action.payload);
     case actionTypes.SET_LIST:
-      return utility.setShoppingList(state,action.payload);
+      return utility.setShoppingList(state, action.payload);
+    case actionTypes.ITEM_ON_OFF:
+      return utility.setItemOnOff(state, action.payload);
     default:
       return state;
   }
