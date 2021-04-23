@@ -13,7 +13,11 @@ const RecipeItem = (props) => {
         name: i.name,
         unit: i.unit,
         bought: false,
-        source: { itemSource: props._id, quantity: i.quantity },
+        source: {
+          itemSource: props._id,
+          itemSourceName: props.name,
+          quantity: i.quantity,
+        },
       });
     });
   };
@@ -26,7 +30,9 @@ const RecipeItem = (props) => {
           <div className="recipe-ingridiens-container">
             <ul className="recipe-ingridiens">
               {props.ingridiens.map((i) => (
-                <li className="ingridient" key={i.name}>{`${i.name } ${i.quantity || ''}${i.unit  ==='x'?'':' '}${i.unit || ''}`}</li>
+                <li className="ingridient" key={i.name}>{`${i.name} ${
+                  i.quantity || ""
+                }${i.unit === "x" ? "" : " "}${i.unit || ""}`}</li>
               ))}
             </ul>
           </div>

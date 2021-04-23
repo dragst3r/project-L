@@ -18,16 +18,14 @@ export const recipes = [
             quantity: 2,
             unit: "x",
           },
-          {
-            name: "bazylia",
-          },
+         
         ],
       },{
-        name: "Szakszuka z bazylią",
+        name: "Inna szakszuka z bazylią",
         cookingTime: 20,
         difficulty: "Łatwe",
         portions: 2,
-        _id: "hy1ia8e311",
+        _id: "hy1ia8e312",
         image:
           "https://inspirowanesmakiem.pl/wp-content/uploads/2019/05/szakszuka-930x530.jpg",
         ingridiens: [

@@ -1,0 +1,17 @@
+.list-item-recipe {
+  display: flex;
+  margin: 1px 20px 1px 20px;
+  background-color: #fff;
+  padding: 3px;
+  border-bottom: 1px solid rgb(2, 66, 0);
+  flex-direction: row;
+  text-align: left;
+}
+.list-item-recipe-name {
+  width: 80%;
+  padding-left: 10px;
+}
+.list-item-recipe-quantity{
+  width: 20%;
+  align-self: center;
+}

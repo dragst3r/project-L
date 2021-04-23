@@ -51,10 +51,22 @@ export const updateRecipesList = (currentState, item) => {
 };
 
 export const filterShoppingItems = (currentState, item) => {
-  const filterShoppingItems = currentState.shoppingItems.filter(
-    (i) => i.source.every((j) => j.itemSource === item.id)
-    // add updating quantityTotal if filtered
-  );
+  let itemQuantity;
+  const filterShoppingItems = currentState.shoppingItems
+    .filter(
+      (i) => {
+        i.source.some((j) => {
+          if (j.itemSource === item.id) {
+            itemQuantity = j.quantity;
+            return true;
+          }
+        });
+      }
+      // add updating quantityTotal if filtered
+    )
+    ;
+  console.log(filterShoppingItems, item);
+  console.table(currentState.shoppingItems);
   let filteredRecipe = null;
   if (!currentState.isFilterOn) {
     filteredRecipe = item;
@@ -81,10 +93,14 @@ export const setShoppingList = (currentState, item) => {
   };
 };
 
-export const setItemOnOff = (currentState,item) => {
-  let newShoppingItems = currentState.shoppingItems.map(m=>m.name===item?{...m,bought:!m.bought}:m).sort(function(x, y) { return x.bought - y.bought })
+export const setItemOnOff = (currentState, item) => {
+  let newShoppingItems = currentState.shoppingItems
+    .map((m) => (m.name === item ? { ...m, bought: !m.bought } : m))
+    .sort(function (x, y) {
+      return x.bought - y.bought;
+    });
   return {
     ...currentState,
-    shoppingItems: [...newShoppingItems]
-  }
-}
+    shoppingItems: [...newShoppingItems],
+  };
+};
