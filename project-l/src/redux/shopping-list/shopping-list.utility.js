@@ -51,22 +51,25 @@ export const updateRecipesList = (currentState, item) => {
 };
 
 export const filterShoppingItems = (currentState, item) => {
-  let itemQuantity;
-  const filterShoppingItems = currentState.shoppingItems
-    .filter(
-      (i) => {
-        i.source.some((j) => {
-          if (j.itemSource === item.id) {
-            itemQuantity = j.quantity;
-            return true;
-          }
-        });
+  let q;
+  let check;
+  const filterShoppingItems = [];
+  currentState.shoppingItems.map(
+    (i) => {
+      check = i.source.some((j) => {
+        if (j.itemSource === item.id) {
+          q = j.quantity;
+          return true;
+        } else return false;
+      });
+      if (check) {
+        filterShoppingItems.push({ ...i, quantityTotal: q });
       }
-      // add updating quantityTotal if filtered
-    )
-    ;
-  console.log(filterShoppingItems, item);
-  console.table(currentState.shoppingItems);
+      return i
+    }
+
+    // add updating quantityTotal if filtered
+  );
   let filteredRecipe = null;
   if (!currentState.isFilterOn) {
     filteredRecipe = item;
@@ -104,3 +107,12 @@ export const setItemOnOff = (currentState, item) => {
     shoppingItems: [...newShoppingItems],
   };
 };
+
+export const showItemsToAdd = (currentState,item) =>{
+  return {
+    ...currentState,
+    itemsToAdd: [...item.items],
+    itemsToAddRecipe: {...item.recipe},
+    showItemsToAdd: true
+  }
+}

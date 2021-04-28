@@ -8,6 +8,8 @@ const initialState = {
   isFilterOn: false,
   filteredRecipe: null,
   selectedRecipes: [],
+  itemsToAdd: [],
+  showItemsToAdd: false
 };
 
 const shoppingList = (state = initialState, action) => {
@@ -22,6 +24,8 @@ const shoppingList = (state = initialState, action) => {
       return utility.setShoppingList(state, action.payload);
     case actionTypes.ITEM_ON_OFF:
       return utility.setItemOnOff(state, action.payload);
+    case actionTypes.SHOW_ITEMS_TO_ADD:
+      return utility.showItemsToAdd(state, action.payload);
     default:
       return state;
   }
