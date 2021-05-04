@@ -9,7 +9,7 @@ const initialState = {
   filteredRecipe: null,
   selectedRecipes: [],
   itemsToAdd: [],
-  showItemsToAdd: false
+  showItemsToAdd: false,
 };
 
 const shoppingList = (state = initialState, action) => {
@@ -26,6 +26,8 @@ const shoppingList = (state = initialState, action) => {
       return utility.setItemOnOff(state, action.payload);
     case actionTypes.SHOW_ITEMS_TO_ADD:
       return utility.showItemsToAdd(state, action.payload);
+    case actionTypes.HIDE_ITEMS_TO_ADD:
+      return utility.hideItemsToAdd(state);
     default:
       return state;
   }

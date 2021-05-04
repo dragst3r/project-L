@@ -3,29 +3,11 @@ import "./recipe-item.css";
 import { connect } from "react-redux";
 import {
   add_item_to_list,
-  add_recipe_to_list,
   set_list,
   show_items_to_add,
 } from "../../redux/shopping-list/shopping-list.actions";
 
 const RecipeItem = (props) => {
-  const addIngridiens = (ingridiens) => {
-    if (!props.listVisible) {
-      props.setList();
-    }
-    ingridiens.forEach((i) => {
-      props.addListItem({
-        name: i.name,
-        unit: i.unit,
-        bought: false,
-        source: {
-          itemSource: props._id,
-          itemSourceName: props.name,
-          quantity: i.quantity,
-        },
-      });
-    });
-  };
   return (
     <div className="recipe-item" key={props._id}>
       <div className="recipe-top-pane">{props.name}</div>
@@ -51,7 +33,11 @@ const RecipeItem = (props) => {
       <div className="recipe-bottom-pane">
         <button
           onClick={() => {
-            props.showItemsToAdd({items:props.ingridiens, recipe: {name: props.name, image: props.image}})
+            props.showItemsToAdd({
+              items: props.ingridiens,
+              recipe: { name: props.name, image: props.image, _id: props._id },
+            });
+            props.setList()
           }}
         >
           + Dodaj składniki do listy
@@ -65,7 +51,6 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   addListItem: (itemToAdd) => dispatch(add_item_to_list(itemToAdd)),
-  addRecipeItem: (recipeToAdd) => dispatch(add_recipe_to_list(recipeToAdd)),
   setList: (list) => dispatch(set_list(list)),
   showItemsToAdd: (items) => dispatch(show_items_to_add(items)),
 });

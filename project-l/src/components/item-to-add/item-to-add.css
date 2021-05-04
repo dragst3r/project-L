@@ -1,24 +1,44 @@
-.item-to-add{
-    display: flex;
-    width: 100%;
+.item-to-add {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  border-radius: 2px;
+}
+
+.item-to-add-quantity {
+  width: 20%;
+  border: none;
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 1px 2px 10px -2px rgb(214, 214, 214);
+}
+.item-to-add-name {
+  width: 70%;
+  padding: 3px 3px 3px 10px;
+}
+.item-to-add-unit {
+  width: 10%;
+  padding-left: 20px;
+  padding: 3px;
+}
+.icon {
+  align-self: center;
+  cursor: pointer;
+}
+.remove-icon {
+  color: rgb(187, 0, 0);
+}
+.add-icon {
+  color: rgb(0, 165, 0);
+}
+.remove-item {
+    background-color:transparent;
+    box-shadow: none;
+    color: rgb(192, 192, 192);
+  }
+  .add-item {
     background-color: rgba(255, 255, 255, 0.986);
-    height: 30px;
-    text-align: left;
-}
-.item-to-add-quantity{
-    width: 20%;
-    border:none;
-    background-color: rgba(255, 255, 255, 1);
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 1px 2px 10px -2px rgb(214, 214, 214);
-}
-.item-to-add-name{
-    width: 70%;
-    padding: 3px 3px 3px 20px;
-}
-.item-to-add-unit{
-    width: 10%;
-    padding-left: 20px;
-    padding: 3px;
-}
+  }

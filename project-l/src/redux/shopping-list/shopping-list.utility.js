@@ -116,3 +116,11 @@ export const showItemsToAdd = (currentState,item) =>{
     showItemsToAdd: true
   }
 }
+export const hideItemsToAdd = (currentState) =>{
+  return {
+    ...currentState,
+    itemsToAdd: [],
+    itemsToAddRecipe: {},
+    showItemsToAdd: false
+  }
+}
