@@ -1,15 +1,14 @@
 .shopping-recipe {
-  height: auto;
+  height: 100%;
   background-color: RGB(2, 66, 0);
   border-radius: 10px;
   padding: 3px;
-  width: 100%;
-  max-width: 45%;
   color: #fff;
   box-shadow: 1px 2px 10px -2px rgb(70, 70, 70);
+  width: 100%;
 }
 .shopping-recipe-name {
-  padding: 5px;
+  padding: 3px 15px 3px 15px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -17,10 +16,11 @@
   margin: 0;
   align-self: center;
   font-weight: 400;
-  height: 100%;
   align-items: center;
   text-align: center;
   color: #000;
   background-color: #fff;
   border-radius: 10px;
+  white-space: nowrap;
 }
+

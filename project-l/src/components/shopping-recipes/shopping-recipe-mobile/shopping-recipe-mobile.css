@@ -1,0 +1,13 @@
+.shopping-recipe-mobile{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.recipe-mobile-items{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: left;
+    overflow: scroll;
+    padding: 5px;
+}

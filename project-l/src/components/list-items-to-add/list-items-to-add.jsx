@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import ItemToAdd from "../item-to-add/item-to-add";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import CustomButton from "../custom-button/custom-button";
+import CloseIcon from "@material-ui/icons/Close";
 import {
   add_item_to_list,
   hide_items_to_add,
@@ -48,9 +49,13 @@ const ListItemsToAdd = (props) => {
     <div className="list-items-to-add">
       <div>
         <img className="recipe-image" src={props.recipe.image} />
-        <div className="recipe-name">{props.recipe.name}</div>
+        <div className="list-item-to-add-header">
+          <div className="recipe-name">{props.recipe.name}</div>
+          <CloseIcon onClick={props.hideList} className="close-icon"/>
+        </div>
         <hr />
       </div>
+
       <div className="list-items-to-add-container">
         {[...(itemsToBeAdded || props.itemsToAdd)].map((i) => (
           <ItemToAdd onItemChange={useItems} item={i} />
@@ -61,11 +66,11 @@ const ListItemsToAdd = (props) => {
           onClick={() => {
             addIngridiens(itemsToBeAdded.filter((i) => !i.shouldBeAdded));
             props.addRecipeItem({
-                            image: props.recipe.image,
-                            name: props.recipe.name,
-                            _id: props.recipe._id,
-                            quantity: 1,
-                          });
+              image: props.recipe.image,
+              name: props.recipe.name,
+              _id: props.recipe._id,
+              quantity: 1,
+            });
           }}
           icon={<ShoppingCartIcon />}
           text="Dodaj składniki"
